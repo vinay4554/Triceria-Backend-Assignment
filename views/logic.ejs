@@ -1,0 +1,13 @@
+<script>
+  function showelement() {
+    rulesinfo.classList.add("show");
+  }
+  function hideelement() {
+    rulesinfo.classList.remove("show");
+  }
+  const close = document.getElementById("close");
+  const rules = document.getElementById("rules");
+  const rulesinfo = document.getElementsByClassName("rules-container")[0];
+  rules.addEventListener("click", showelement);
+  close.addEventListener("click", hideelement);
+</script>

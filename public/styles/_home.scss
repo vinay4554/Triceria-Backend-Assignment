@@ -1,0 +1,49 @@
+.home {
+  margin: 150px 0 20px;
+  font-family: "Merriweather", serif;
+}
+.game-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 60px;
+  column-gap: 50px;
+  p {
+    margin: 0;
+    transition: 100ms;
+
+    &:hover {
+      transform: scale(1.2);
+      cursor: pointer;
+    }
+  }
+}
+#title {
+  text-align: center;
+  color: black;
+  font-size: 25px;
+  margin-top: 20px;
+  font-family: "Roboto", sans-serif;
+}
+.enter-game {
+  text-align: center;
+  a {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+    text-decoration: none;
+    font-family: "Merriweather", serif;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .enter-game {
+    a {
+      padding: 15px 25px;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.rules-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  height: 100vh;
+  width: 100vw;
+  .rules {
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px 50px 30px;
+    width: 600px;
+    max-width: 100%;
+    background-color: #fff;
+    font-family: "Poppins", sans-serif;
+    .start {
+      text-align: center;
+      font-weight: bold;
+      border-bottom: 2px solid black;
+      margin-bottom: 5px;
+    }
+
+    div {
+      padding: 10px 0;
+      i {
+        padding-right: 10px;
+      }
+    }
+    .close {
+      display: flex;
+      justify-content: flex-end;
+      cursor: pointer;
+      font-size: 25px;
+    }
+  }
+}
+
+.show {
+  background-color: rgba(0, 0, 0, 0.2);
+  pointer-events: auto;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 700px) {
+  .rules-container {
+    .rules {
+      width: 80vw;
+      padding: 10px 20px;
+    }
+  }
+}

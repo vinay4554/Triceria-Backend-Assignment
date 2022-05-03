@@ -1,0 +1,306 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #b0e7ec;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15px 20px;
+  background-color: #5050f0;
+  font-size: 20px;
+  color: white;
+  width: 80%;
+  margin: 15px auto;
+  border-radius: 10px;
+  font-family: "Merriweather", serif;
+}
+
+.nav .instructions {
+  cursor: pointer;
+  color: #fff;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+.rules-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  height: 100vh;
+  width: 100vw;
+}
+
+.rules-container .rules {
+  border-radius: 10px;
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 10px 50px 30px;
+  width: 600px;
+  max-width: 100%;
+  background-color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+.rules-container .rules .start {
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 2px solid black;
+  margin-bottom: 5px;
+}
+
+.rules-container .rules div {
+  padding: 10px 0;
+}
+
+.rules-container .rules div i {
+  padding-right: 10px;
+}
+
+.rules-container .rules .close {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.show {
+  background-color: rgba(0, 0, 0, 0.2);
+  pointer-events: auto;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 700px) {
+  .rules-container .rules {
+    width: 80vw;
+    padding: 10px 20px;
+  }
+}
+
+.game .players {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 20px 0;
+  font-size: 25px;
+  -webkit-column-gap: 50px;
+          column-gap: 50px;
+  font-family: "Poppins", sans-serif;
+}
+
+.game .player p {
+  text-align: center;
+}
+
+.game .rounds {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.game .rounds a {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 20px;
+  text-align: center;
+  background-color: blue;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+@media only screen and (max-width: 700px) {
+  .game .players {
+    margin: 0 auto;
+    text-align: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .game .player {
+    width: 40%;
+  }
+  .game .rounds {
+    margin-bottom: 10px;
+  }
+  .game .rounds a {
+    padding: 15px 25px;
+  }
+}
+
+table {
+  border-collapse: collapse;
+  margin: 10px auto;
+}
+
+#scores {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+  margin: 30px auto;
+}
+
+#scores td,
+#scores th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+}
+
+#scores tr:nth-child(even) {
+  background-color: #00ffc6;
+}
+
+#scores tr:nth-child(odd) {
+  background-color: #99ffcd;
+}
+
+#scores tr:hover {
+  background-color: #54d4e7;
+}
+
+#scores th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #62c3d2;
+  color: white;
+}
+
+.game .tablehead {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 25px;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+@media only screen and (max-width: 700px) {
+  #scores {
+    width: 95%;
+  }
+  #scores th {
+    font-size: 15px;
+  }
+}
+
+.alert-message {
+  margin: 10px auto 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: green;
+  padding: 0 15px;
+  width: 50%;
+}
+
+p.close-button {
+  cursor: pointer;
+}
+
+.remove-alert {
+  display: none;
+}
+
+@media only screen and (max-width: 700px) {
+  .alert-message {
+    width: 90%;
+  }
+}
+
+.home {
+  margin: 150px 0 20px;
+  font-family: "Merriweather", serif;
+}
+
+.game-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 60px;
+  -webkit-column-gap: 50px;
+          column-gap: 50px;
+}
+
+.game-icons p {
+  margin: 0;
+  -webkit-transition: 100ms;
+  transition: 100ms;
+}
+
+.game-icons p:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  cursor: pointer;
+}
+
+#title {
+  text-align: center;
+  color: black;
+  font-size: 25px;
+  margin-top: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.enter-game {
+  text-align: center;
+}
+
+.enter-game a {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  text-align: center;
+  background-color: blue;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-family: "Merriweather", serif;
+}
+
+@media only screen and (max-width: 700px) {
+  .enter-game a {
+    padding: 15px 25px;
+  }
+}
+/*# sourceMappingURL=App.css.map */

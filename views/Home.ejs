@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./head.ejs") -%>
+  <body>
+    <%- include("./nav.ejs") -%> <%- include("./rules.ejs") -%>
+    <div class="home">
+      <div class="game-icons">
+        <p>✊</p>
+        <p>✋</p>
+        <p>✌️</p>
+      </div>
+      <div id="title">
+        <h2>Rock - Paper - Scissors</h2>
+      </div>
+      <div class="enter-game">
+        <a href="/game/start"> Enter Game</a>
+      </div>
+    </div>
+    <%- include("./logic.ejs") -%>
+  </body>
+</html>

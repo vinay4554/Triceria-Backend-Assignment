@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../head.ejs") -%> 
+  <body>
+    <%- include("./nav.ejs") -%>
+    <%if(message.length>0) { %>
+      <div class="alert-message" id="alert-message">
+        <p><%= message %></p>
+        <p id="close-button">X</p>
+      </div>
+      <% } %>
+    <div class="game">
+      <div class="game-result">
+        <div class="tablehead">
+          <h3>After <%= round %> 
+            <% if(round >1) {  %>
+              Rounds
+           <% } else{  %>
+                Round
+          <% } %>
+             Result </h3>
+        </div>
+        <table id="scores">
+          <tr>
+            <th></th>
+            <th>Player 1</th>
+            <th>Player 2</th>
+            <th>Player 3</th>
+            <th>Player 4</th>
+          </tr>
+          <tr>
+            <th>Player 1</th>
+            <% p1.map(p => { %>
+              <td><%= p  %></td>
+           <% })  %>
+          </tr>
+          <tr>
+            <th>Player 2</th>
+            <% p2.map(p => { %>
+              <td><%= p  %></td>
+           <% })  %>
+          </tr>
+          <tr>
+            <th>Player 3</th>
+            <% p3.map(p => { %>
+              <td><%= p  %></td>
+           <% })  %>
+          </tr>
+          <tr>
+            <th>Player 4</th>
+            <% p4.map(p => { %>
+              <td><%= p  %></td>
+           <% })  %>
+          </tr>
+        </table>
+      </div>
+      <div class="players">
+        <div class="player 1">
+          <h4>Player 1</h4>
+          <p><p><%= s1.emoji %></i></p></p>
+          <p><p><%= s1.name %></i></p></p>
+        </div>
+        <div class="player 2">
+          <h4>Player 2</h4>
+          <p><p><%= s2.emoji %></i></p></p>
+          <p><p><%= s2.name %></i></p></p>
+        </div>
+        <div class="player 3">
+          <h4>Player 3</h4>
+          <p><p><%= s3.emoji %></i></p></p>
+          <p><p><%= s3.name %></i></p></p>
+        </div>
+        <div class="player 4">
+          <h4>Player 4</h4>
+          <p><p><%= s4.emoji %></i></p></p>
+          <p><p><%= s4.name %></i></p></p>
+        </div>
+      </div>
+      <div class="rounds">
+        <a href="/game/score">Start Round <%= round+1 %></a>
+      </div>
+    </div>
+    <script>
+      const closebutton = document.getElementById("close-button");
+      const alertmessage = document.getElementById("alert-message");
+      closebutton.addEventListener("click", () => {
+        alertmessage.classList.add("remove-alert");
+      });
+    </script>
+  </body>
+</html>
