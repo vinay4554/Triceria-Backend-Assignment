@@ -106,39 +106,10 @@ body {
   }
 }
 
-.game .players {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: 20px 0;
-  font-size: 25px;
-  -webkit-column-gap: 50px;
-          column-gap: 50px;
-  font-family: "Poppins", sans-serif;
-}
-
-.game .player p {
+.game {
   text-align: center;
-}
-
-.game .rounds {
-  text-align: center;
-  margin-top: 5px;
-}
-
-.game .rounds a {
-  display: inline-block;
-  text-align: center;
-  padding: 10px 20px;
-  text-align: center;
-  background-color: blue;
-  color: white;
-  border-radius: 10px;
-  text-decoration: none;
-  font-family: "Source Sans Pro", sans-serif;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 @media only screen and (max-width: 700px) {
@@ -245,6 +216,26 @@ p.close-button {
 .home {
   margin: 150px 0 20px;
   font-family: "Merriweather", serif;
+}
+
+.home form {
+  width: 40%;
+  margin: 20px auto;
+}
+
+.home form input[type="number"],
+.home form legend {
+  width: 100%;
+  padding: 10px;
+}
+
+.home form button {
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  margin-top: 20px;
+  border-radius: 10px;
+  cursor: pointer;
 }
 
 .game-icons {

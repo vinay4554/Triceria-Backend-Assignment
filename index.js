@@ -5,7 +5,6 @@ import flash from "connect-flash";
 import session from "express-session";
 import cookieParser from "cookie-parser";
 import gameroutes from "./routes/game.js";
-import { restart } from "./middlewares/game.js";
 
 const app = express();
 app.use(express.json());

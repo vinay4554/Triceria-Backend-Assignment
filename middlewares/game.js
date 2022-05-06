@@ -1,80 +1,58 @@
-const emojis = [
-  {
-    name: "rock",
-    emoji: "✊",
-  },
-  {
-    name: "paper",
-    emoji: "✋",
-  },
-  {
-    name: "scissor",
-    emoji: "✌️",
-  },
-];
+const choices = ["rock", "paper", "scissor"];
 
-var p1 = ["-", 0, 0, 0];
-var p2 = [0, "-", 0, 0];
-var p3 = [0, 0, "-", 0];
-var p4 = [0, 0, 0, "-"];
+function decidewinner(a, b) {
+  if (a === b) return -1;
 
-const play12 = (play1, play2) => {
-  if (play1.name === play2.name) {
-    return 0;
-  } else if (play1.name == "rock" && play2.name == "scissor") {
-    return 1;
-  } else if (play1.name == "paper" && play2.name == "rock") {
-    return 1;
-  } else if (play1.name == "scissor" && play2.name == "paper") {
-    return 1;
-  } else if (play1.name == "paper" && play2.name == "scissor") {
-    return 0;
-  } else if (play1.name == "scissor" && play2.name == "rock") {
-    return 0;
-  } else if (play1.name == "rock" && play2.name == "paper") {
-    return 0;
-  }
-};
+  if (a === 0 && b === 1) return 2;
+
+  if (a == 0 && b == 2) return 1;
+
+  if (a == 1 && b == 0) return 1;
+
+  if (a === 1 && b === 2) return 1;
+
+  if (a === 2 && b === 0) return 1;
+
+  if (a === 2 && b === 1) return 1;
+}
+
 const playerschoice = (req, res, next) => {
-  const ply1 = Math.floor(Math.random() * 3);
-  const ply2 = Math.floor(Math.random() * 3);
-  const ply3 = Math.floor(Math.random() * 3);
-  const ply4 = Math.floor(Math.random() * 3);
-  req.choices = [emojis[ply1], emojis[ply2], emojis[ply3], emojis[ply4]];
+  const n = req.body.num1;
 
-  //   calculating Player 1 outcomes
-  p1[1] += Number(play12(emojis[ply1], emojis[ply2]));
-  p1[2] += Number(play12(emojis[ply1], emojis[ply3]));
-  p1[3] += Number(play12(emojis[ply1], emojis[ply4]));
+  const result = {};
 
-  //   calculating Player 2 outcomes
+  const temp = [];
 
-  p2[0] += Number(play12(emojis[ply2], emojis[ply1]));
-  p2[2] += Number(play12(emojis[ply2], emojis[ply3]));
-  p2[3] += Number(play12(emojis[ply2], emojis[ply4]));
+  for (let i = 0; i < n; i++) temp.push(0);
 
-  // calculating Player 3 outcomes
+  for (let i = 0; i < n; i++) result[i] = temp.slice();
 
-  p3[0] += Number(play12(emojis[ply3], emojis[ply1]));
-  p3[1] += Number(play12(emojis[ply3], emojis[ply2]));
-  p3[3] += Number(play12(emojis[ply3], emojis[ply4]));
+  const rounds = [];
+  for (let round = 0; round < 50; round++) {
+    for (let playerId = 0; playerId < n; playerId++) {
+      for (
+        let secondPlayerId = playerId + 1;
+        secondPlayerId < n;
+        secondPlayerId++
+      ) {
+        const firstPlayerChoice = Math.floor(Math.random() * 3);
 
-  // calculating Player 4 outcomes
+        const secondPlayerChoice = Math.floor(Math.random() * 3);
 
-  p4[0] += Number(play12(emojis[ply4], emojis[ply1]));
-  p4[1] += Number(play12(emojis[ply4], emojis[ply2]));
-  p4[2] += Number(play12(emojis[ply4], emojis[ply3]));
+        const winner = decidewinner(firstPlayerChoice, secondPlayerChoice);
 
-  req.results = [p1, p2, p3, p4];
+        if (winner === 1) {
+          result[playerId][secondPlayerId]++;
+        } else if (winner === 2) {
+          result[secondPlayerId][playerId]++;
+        }
+      }
+    }
 
-  next();
-};
+    rounds.push(JSON.parse(JSON.stringify(result)));
+  }
 
-export const restart = (req, res, next) => {
-  p1 = ["-", 0, 0, 0];
-  p2 = [0, "-", 0, 0];
-  p3 = [0, 0, "-", 0];
-  p4 = [0, 0, 0, "-"];
+  req.output = rounds;
 
   next();
 };

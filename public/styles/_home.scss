@@ -1,6 +1,24 @@
 .home {
   margin: 150px 0 20px;
   font-family: "Merriweather", serif;
+
+  form {
+    width: 40%;
+    margin: 20px auto;
+    input[type="number"],
+    legend {
+      width: 100%;
+      padding: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      outline: none;
+      margin-top: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  }
 }
 .game-icons {
   display: flex;

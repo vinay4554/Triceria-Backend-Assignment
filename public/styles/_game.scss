@@ -1,32 +1,7 @@
 .game {
-  .players {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-    font-size: 25px;
-    column-gap: 50px;
-    font-family: "Poppins", sans-serif;
-  }
-  .player {
-    p {
-      text-align: center;
-    }
-  }
-  .rounds {
-    text-align: center;
-    margin-top: 5px;
-    a {
-      display: inline-block;
-      text-align: center;
-      padding: 10px 20px;
-      text-align: center;
-      background-color: blue;
-      color: white;
-      border-radius: 10px;
-      text-decoration: none;
-      font-family: "Source Sans Pro", sans-serif;
-    }
-  }
+  text-align: center;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 @media only screen and (max-width: 700px) {

@@ -12,9 +12,13 @@
       <div id="title">
         <h2>Rock - Paper - Scissors</h2>
       </div>
-      <div class="enter-game">
-        <a href="/game/start"> Enter Game</a>
-      </div>
+      <form action="/game/score" method="post">
+        <fieldset>
+          <legend>Number Of Players</legend>
+          <input type="number" name="num1" />
+        </fieldset>
+        <button type="submit">Start Game</button>
+      </form>
     </div>
     <%- include("./logic.ejs") -%>
   </body>
